@@ -11,3 +11,7 @@ make link
 cd <.scripts/dotscripts>
 make unlink
 ```
+
+## Uninstallation
+To uninstall the scripts run this command:
+`rm ~/bin/makeflask ~/bin/makehtml`
