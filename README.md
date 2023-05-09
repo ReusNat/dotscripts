@@ -1,17 +1,14 @@
 # dotscripts
 Contained in this repo are helpful scripts I use. 
 ## Installation
+Both installation types start with `git clone https://github.com/reusnat/dotscripts ~/.scripts`
 ### Liked Installation
 ```
-cd <.scripts/dotscripts>
+cd ~/.scripts
 make link
 ```
 ### Unlinked Installation
 ```
-cd <.scripts/dotscripts>
+cd .scripts
 make unlink
 ```
-
-## Uninstallation
-To uninstall the scripts run this command:
-`rm ~/bin/makeflask ~/bin/makehtml`
