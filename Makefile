@@ -16,3 +16,7 @@ unlink: $(SCRIPTFILES)
 		chmod 700 ~/bin/$${i}; \
 	done
 
+uninstall: $(SCRIPTFILES)
+	for i in $?; do \
+		rm -f ~/bin/$${i}; \
+	done
