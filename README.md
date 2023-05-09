@@ -8,6 +8,7 @@ cd ~/.scripts
 make link
 ```
 ### Unlinked Installation
+Unlinked installation puts real copies of each script into the `~/bin` folder, not just references to the files in `~/.scripts`
 ```
 cd ~/.scripts
 make unlink
