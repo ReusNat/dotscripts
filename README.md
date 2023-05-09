@@ -9,6 +9,6 @@ make link
 ```
 ### Unlinked Installation
 ```
-cd .scripts
+cd ~/.scripts
 make unlink
 ```
