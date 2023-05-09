@@ -1,9 +1,18 @@
-link:
-	ln -sf ~/.scripts/makeflask ~/bin/makeflask
-	ln -sf ~/.scripts/makehtml ~/bin/makehtml
+SHELL=/bin/bash
 
-unlink:
-	rm -f ~/bin/makeflask ~/bin/makehtml
-	cp ~/.scripts/makeflask ~/bin/makeflask
-	cp ~/.scripts/makehtml ~/bin/makehtml
+SCRIPTFILES = ghlink gitclone makeflask makehtml prettyzip
+
+link: $(SCRIPTFILES)
+	for i in $?; do \
+		rm -f ~/bin/$${i}; \
+		ln -sf ~/.scripts/$${i} ~/bin/$${i};\
+		chmod 700 ~/.scripts/$${i}; \
+	done
+
+unlink: $(SCRIPTFILES)
+	for i in $?; do \
+		rm -f ~/bin/$${i}; \
+		cp ~/.scripts/$${i} ~/bin/$${i}; \
+		chmod 700 ~/bin/$${i}; \
+	done
 

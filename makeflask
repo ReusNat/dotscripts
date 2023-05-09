@@ -3,30 +3,30 @@
 # This is for WAD Spring 2023.
 
 if [[ $# -ne 1 ]]; then
-      echo "Usage: $0 <app-name>"
-        exit 1
-    fi
+  echo "Usage: $0 <app-name>"
+  exit 1
+fi
 
-    if [[ -e $1 ]]; then
-          read -p "$1 already exists. Do you want to overwrite (y/n)? " ans
-            if [[ $ans == "y" ]]; then
-                    rm -rf $1
-                      else
-                              exit 1
-                                fi
-                            fi
+if [[ -e $1 ]]; then
+  read -p "$1 already exists. Do you want to overwrite (y/n)? " ans
+  if [[ $ans == "y" ]]; then
+    rm -rf $1
+  else
+    exit 1
+  fi
+fi
 
-                            mkdir $1
-                            cd $1
-                            virtualenv -p python3 env
-                            source env/bin/activate
+mkdir $1
+cd $1
+virtualenv -p python3 env
+source env/bin/activate
 
-                            pip install Flask
-                            pip install requests
-                            pip install Flask-SQLAlchemy
-                            pip install SQLAlchemy
+pip install Flask
+pip install requests
+pip install Flask-SQLAlchemy
+pip install SQLAlchemy
 
-                            cat >models.py <<MODELS_EOF
+cat >models.py <<MODELS_EOF
 # Set up the DB using the following commands:
 # $ python
 # > from app import db
@@ -95,5 +95,4 @@ echo "$1 created. To get started,"
 echo "cd $1 && source env/bin/activate"
 echo "Then, to run your app,"
 echo "flask run"
-
 
