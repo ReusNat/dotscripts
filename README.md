@@ -12,3 +12,8 @@ make link
 cd ~/.scripts
 make unlink
 ```
+## Uninstallation
+```
+cd ~/.scripts
+make uninstall
+```
